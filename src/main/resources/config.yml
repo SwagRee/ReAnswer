@@ -1,0 +1,38 @@
+# 问答插件核心配置
+interval: 300  # 问题自动出现的时间间隔（秒），默认5分钟
+rapid-mode: true  # 是否启用抢答模式（true=仅首人可答，false=所有人可答）
+active-sets: ["ability-set"]  # 默认激活的题库名称（对应下方question-sets的键名）
+
+# 题库配置（支持多个题库）
+question-sets:
+  # 宝可梦特性题库（使用你提供的特性数据）
+  ability-set:
+    display-name: "宝可梦特性题库"  # 题库显示名称
+    description: "关于宝可梦特性效果的问答"  # 题库描述
+    commands:  # 答对问题后执行的奖励命令（{player}会替换为玩家名）
+      - "give {player} diamond 2"  # 给予2个钻石
+      - "say 恭喜 {player} 答对了！获得了奖励~"  # 广播消息
+      - "xp add {player} 100 points"  # 增加100点经验
+    questions:  # 题库中的问题列表
+      - question: "编号1的特性是什么？效果是？"
+        answer: "恶臭，通过释放臭臭的气味，在攻击的时候，有时会使对手畏缩。"
+      - question: "编号2的特性名称是什么？效果是？"
+        answer: "降雨，出场时，会将天气变为下雨。"
+      - question: "编号3的特性会让宝可梦产生什么变化？"
+        answer: "加速，每一回合速度会变快。"
+      - question: "编号4的特性如何保护宝可梦？"
+        answer: "战斗盔甲，被坚硬的甲壳守护着，不会被对手的攻击击中要害。"
+      - question: "编号5的特性在HP全满时能抵御什么攻击？"
+        answer: "结实，在HP全满时，即使受到招式攻击，也不会被一击打倒。一击必杀的招式也没有效果。"
+
+  # 示例：可添加第二个题库（需通过/qaconfig activateset example-set激活）
+  example-set:
+    display-name: "示例题库"
+    description: "测试用的示例题库"
+    commands:
+      - "give {player} gold_ingot 5"  # 给予5个金锭
+    questions:
+      - question: "Minecraft中最基础的方块是什么？"
+        answer: "石头"
+      - question: " Nether（下界）的维度ID是多少？"
+        answer: "-1"

@@ -1,0 +1,42 @@
+dialogs:
+  # 妈妈对话组
+  mother_start:
+    steps:
+      1:
+        speaker: "妈妈"
+        text: "呀呀呀！今天你就要十岁啦！你应该知道今天是什么日子了吧?"
+        next: 2
+      2:
+        speaker: "我"
+        text: "成为训练家的第一天！"
+        next: 3
+      3:
+        speaker: "妈妈"
+        text: "没想到你记得这么清楚"
+        next: 4
+      4:
+        speaker: "我"
+        text: "因为我期待这一天很久了！"
+        next: 5
+      5:
+        speaker: "妈妈"
+        text: "现在赶快去大木博士研究所领取你的第一只宝可梦吧！祝你一路顺风！！！"
+        next: -1
+    complete_command: "say %player% 完成了妈妈的任务"
+
+  # 大木博士对话组
+  professor_start:
+    steps:
+      1:
+        speaker: "大木博士"
+        text: "亲爱的训练家你好，我叫大木，他们都叫我大木博士"
+        next: 2
+      2:
+        speaker: "大木博士"
+        text: "专注于研究宝可梦，旁边的是我的孙子小茂"
+        next: 3
+      3:
+        speaker: "大木博士"
+        text: "快来这儿领取你们的第一只宝可梦！"
+        next: -1
+    complete_command: "give %player% minecraft:emerald 1"

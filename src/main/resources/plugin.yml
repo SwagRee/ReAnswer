@@ -1,0 +1,25 @@
+name: ReAnswer  # 插件名称
+main: io.github.swagree.reanswer.Main  # 主类路径（必须与你的包结构一致）
+version: 1.0  # 插件版本
+api-version: 1.12  # 适配的Spigot API版本（兼容1.12及以上）
+description: 点击交互式问答插件，支持多题库和命令奖励  # 插件描述
+author: swagree  # 作者名
+
+# 命令配置
+commands:
+  question:
+    description: 玩家参与问答（抢答/回答问题）
+    usage: /<command> rapid [抢答] 或 /<command> answer [答案]
+    aliases: [qa, 问答]  # 命令别名（方便玩家使用）
+
+  qaconfig:
+    description: 管理员配置插件（设置间隔/模式/发送问题等）
+    usage: /<command> [reload|interval|rapidmode|send]
+    permission: reanswer.admin  # 执行权限
+    permission-message: §c你没有权限执行此命令！
+
+# 权限配置
+permissions:
+  reanswer.admin:
+    description: 允许使用所有管理员命令
+    default: op  # 默认仅管理员（OP）拥有
